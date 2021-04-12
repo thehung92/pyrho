@@ -13,3 +13,6 @@ RUN conda install -y -c conda-forge msprime && \
     pip install ldpop/ && \
     git clone https://github.com/popgenmethods/pyrho.git pyrho && \
     pip install pyrho/
+# make bash start from pyrho env
+RUN conda init && \
+    echo "conda activate pyrho" >> ~/.bashrc
